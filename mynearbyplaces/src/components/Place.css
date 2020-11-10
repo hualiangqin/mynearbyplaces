@@ -1,0 +1,26 @@
+.right {
+    border: solid black;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.down {
+    border: solid black;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.places-container{
+    opacity: 90%;
+    color: greenyellow;
+    border: solid black;
+    border-radius: 1ch;
+    border-width: 0.01em;
+    width: 30%;
+}
