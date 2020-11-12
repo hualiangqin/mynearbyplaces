@@ -31,7 +31,7 @@ class Place extends React.Component{
         console.log("in place");
         const { place } = this.props;
         return(
-            <div class="places-container">
+            <div className="places-container">
                 <p>Hello world</p>
                 <div>
                     <div>Name: {place.name}</div>
@@ -39,9 +39,9 @@ class Place extends React.Component{
                     <div>Type: {place.type}</div>
                 </div>
                 {this.state.showReview ?
-                <p onClick={this.showOrCollapseReviews}>reviews: <i class="down"></i></p>
+                <p onClick={this.showOrCollapseReviews}>reviews: <i className="down"></i></p>
                 :
-                <p onClick={this.showOrCollapseReviews}>reviews: <i class="right"></i></p>
+                <p onClick={this.showOrCollapseReviews}>reviews: <i className="right"></i></p>
                 }
                 <br />
                 <div>

@@ -60,9 +60,9 @@ class Home extends React.Component{
     body = () => {
         const {results} = this.state;
         return (
-            <div class="results-container">
+            <div className="results-container">
                 {results.length>0 ? 
-                results.map(p => <Place place={p}/>)
+                results.map(p => <Place key={p.name} place={p}/>)
                 :
                 "no results"}
             </div>
@@ -72,12 +72,12 @@ class Home extends React.Component{
     render() {
 
         return (
-            <div class="main">
-                <h1 class="homepage-title">MyNearbyPlaces</h1>
-                <div class="search-field">
-                    <div class="input-wrapper">
+            <div className="main">
+                <h1 className="homepage-title">MyNearbyPlaces</h1>
+                <div className="search-field">
+                    <div className="input-wrapper">
                         <span>Find</span>
-                        <input class="input" maxLength="64" placeholder="find my nearby places" name="keywords" value={this.state.keywords} onChange={this.handleChange}></input>
+                        <input className="input" maxLength="64" placeholder="find my nearby places" name="keywords" value={this.state.keywords} onChange={this.handleChange}></input>
                         <button onClick={this.clickSearch}>Search</button>
                     </div>
                     <Link to='/addplace'>
