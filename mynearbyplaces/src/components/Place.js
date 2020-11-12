@@ -30,7 +30,6 @@ class Place extends React.Component{
     render(){
         console.log("in place");
         const { place } = this.props;
-        let dest = {pathname: '/addreview', state: {place: place}};
         return(
             <div class="places-container">
                 <p>Hello world</p>
