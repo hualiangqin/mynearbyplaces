@@ -28,6 +28,7 @@ class Place extends React.Component{
     }
 
     render(){
+        console.log("in place");
         const { place } = this.props;
         let dest = {pathname: '/addreview', state: {place: place}};
         return(
