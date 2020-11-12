@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/mynearbyplaces/static/css/main.87c2f156.chunk.css",
-    "main.js": "/mynearbyplaces/static/js/main.14f0c4ed.chunk.js",
-    "main.js.map": "/mynearbyplaces/static/js/main.14f0c4ed.chunk.js.map",
+    "main.js": "/mynearbyplaces/static/js/main.8d073fc5.chunk.js",
+    "main.js.map": "/mynearbyplaces/static/js/main.8d073fc5.chunk.js.map",
     "runtime-main.js": "/mynearbyplaces/static/js/runtime-main.ed4e8ec5.js",
     "runtime-main.js.map": "/mynearbyplaces/static/js/runtime-main.ed4e8ec5.js.map",
-    "static/js/2.b218fbe0.chunk.js": "/mynearbyplaces/static/js/2.b218fbe0.chunk.js",
-    "static/js/2.b218fbe0.chunk.js.map": "/mynearbyplaces/static/js/2.b218fbe0.chunk.js.map",
+    "static/js/2.24797198.chunk.js": "/mynearbyplaces/static/js/2.24797198.chunk.js",
+    "static/js/2.24797198.chunk.js.map": "/mynearbyplaces/static/js/2.24797198.chunk.js.map",
     "static/js/3.5e11fd44.chunk.js": "/mynearbyplaces/static/js/3.5e11fd44.chunk.js",
     "static/js/3.5e11fd44.chunk.js.map": "/mynearbyplaces/static/js/3.5e11fd44.chunk.js.map",
     "index.html": "/mynearbyplaces/index.html",
     "static/css/main.87c2f156.chunk.css.map": "/mynearbyplaces/static/css/main.87c2f156.chunk.css.map",
-    "static/js/2.b218fbe0.chunk.js.LICENSE.txt": "/mynearbyplaces/static/js/2.b218fbe0.chunk.js.LICENSE.txt",
+    "static/js/2.24797198.chunk.js.LICENSE.txt": "/mynearbyplaces/static/js/2.24797198.chunk.js.LICENSE.txt",
     "static/media/Home.css": "/mynearbyplaces/static/media/tucson.95aa00c7.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.ed4e8ec5.js",
-    "static/js/2.b218fbe0.chunk.js",
+    "static/js/2.24797198.chunk.js",
     "static/css/main.87c2f156.chunk.css",
-    "static/js/main.14f0c4ed.chunk.js"
+    "static/js/main.8d073fc5.chunk.js"
   ]
 }
