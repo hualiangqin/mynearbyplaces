@@ -72,17 +72,19 @@ class Home extends React.Component{
     render() {
 
         return (
-            <div className="main">
-                <h1 className="homepage-title">MyNearbyPlaces</h1>
-                <div className="search-field">
-                    <div className="input-wrapper">
-                        <span>Find</span>
-                        <input className="input" maxLength="64" placeholder="find my nearby places" name="keywords" value={this.state.keywords} onChange={this.handleChange}></input>
-                        <button onClick={this.clickSearch}>Search</button>
+            <div>
+                <div className="main">
+                    <h1 className="homepage-title">MyNearbyPlaces</h1>
+                    <div className="search-field">
+                        <div className="input-wrapper">
+                            <span>Find</span>
+                            <input className="input" maxLength="64" placeholder="find my nearby places" name="keywords" value={this.state.keywords} onChange={this.handleChange}></input>
+                            <button onClick={this.clickSearch}>Search</button>
+                        </div>
+                        <Link to='/addplace'>
+                            <button>Add Place</button>
+                        </Link>
                     </div>
-                    <Link to='/addplace'>
-                        <button>Add Place</button>
-                    </Link>
                 </div>
                 {this.body()}
             </div>
