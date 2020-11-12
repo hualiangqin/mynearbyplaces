@@ -33,6 +33,7 @@ class Place extends React.Component{
         let dest = {pathname: '/addreview', state: {place: place}};
         return(
             <div class="places-container">
+                <p>Hello world</p>
                 <div>
                     <div>Name: {place.name}</div>
                     <div>Address: {place.address}</div>
@@ -49,7 +50,7 @@ class Place extends React.Component{
                 place.reviews.map(r => <Review review={r}/>)
                 : ''}
                 </div>
-                <Link to={dest}>
+                <Link to='/addreview'>
                     <button>Add Review</button>
                 </Link>
             </div>

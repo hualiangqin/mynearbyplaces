@@ -28,24 +28,9 @@ class AddReview extends React.Component{
     }
 
     render(){
-        let dest = {pathname: '/mynearbyplaces', state: {
-            stars: this.state.stars, 
-            comment: this.state.comment,
-            place: {}
-        }};
-        
-        const location = this.props.location;
-        if (location){
-            if(location.state){
-                if (location.state.place){
-                    dest.state.place = location.state.place;
-                }
-            }
-        }
-        
         if (this.state.submitted){
             return(
-                <Redirect to={dest}/>
+                <Redirect to='/mynearbyplaces'/>
             );
         }
 

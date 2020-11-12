@@ -69,40 +69,10 @@ class Home extends React.Component{
         )
     }
 
-    updatePlaces = () => {
-        const location = this.props.location;
-        if (location){
-            if(location.state){
-                let newplaces = this.state.places;
-                if (location.stars){
-                    let r = {
-                        stars: location.stars,
-                        comment: location.comment
-                    }
-                    for (let i=0; i<this.state.places.length; i++){
-                        let place = this.state.places[i];
-                        const _ = require('lodash');
-                        if (_.isEqual(place, location.state.place)){
-                            newplaces.splice(i, 1);
-                            place.reviews.push(r);
-                            newplaces.push(place);
-                        }
-                        this.setState({places: newplaces})
-                    }
-                }else{
-                    newplaces.push(location.state.place);
-                    this.setState({places: newplaces})
-                }
-            }
-        }
-    }
-
     render() {
-        const location = this.props.location;
 
         return (
             <div class="main">
-                {location? this.updatePlaces : ''}
                 <h1 class="homepage-title">MyNearbyPlaces</h1>
                 <div class="search-field">
                     <div class="input-wrapper">

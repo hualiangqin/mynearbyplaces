@@ -1,5 +1,6 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
+import server from '../ServerInterface/server';
 
 class AddPlace extends React.Component{
 
@@ -26,22 +27,15 @@ class AddPlace extends React.Component{
         console.log("name: " + name);
         console.log("type: " + type);
         console.log("address: " + address);
+        server.addPlace(name, type, address);
         //more to go on
         event.preventDefault();
     }
 
     render(){
-        const {name, type, address} = this.state;
-        let newplace = {
-            name: name,
-            type: type,
-            address: address,
-            reviews: []
-        }
-        let dest = {pathname: '/mynearbyplaces', state: {place: newplace}};
         if (this.state.submitted){
             return(
-                <Redirect to={dest}/>
+                <Redirect to='/mynearbyplaces'/>
             );
         }
 

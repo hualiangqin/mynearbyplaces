@@ -2,22 +2,27 @@
 // import { resolve } from "path";
 import places from './places';
 
+let add = (n, t, a) =>{
+    let place = {
+        name: n,
+        type: t,
+        address: a,
+        review: []
+    }
+    console.log(place);
+    places.push(place);
+    console.log(places);
+}
+
+
 let server = {
     
-    // fetchPlacesWrap: () => {
-    //     //later on, connect to server
-    //     const fs = require("fs");
-    //     fs.readFile("./places.json", (err, data)=>{
-    //         if (err){
-    //             rejects(err)
-    //         }
-    //         const places = JSON.parse(data);
-    //         resolve(places);
-    //     });
-    // }
-
     fetchPlaces: () => {
         return places;
+    },
+
+    addPlace: (name, type, address) => {
+        add(name, type, address)
     }
 };
 
