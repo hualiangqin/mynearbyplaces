@@ -32,6 +32,8 @@ class Home extends React.Component{
     }
 
     clickSearch = () => {
+        console.log("click");
+        console.log(this.state.keywords);
         const _ = require('lodash'); 
         const {keywords, places} = this.state;
         let keywordsArray = keywords.split(" ");
@@ -51,6 +53,7 @@ class Home extends React.Component{
                 }
             }
         }
+        console.log(placeResults);
         this.setState({results: placeResults})
     }
 
