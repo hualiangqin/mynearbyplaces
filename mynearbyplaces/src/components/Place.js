@@ -29,7 +29,7 @@ class Place extends React.Component{
 
     render(){
         const { place } = this.props;
-        let dest = {pathname: '/addReview', state: {place: place}};
+        let dest = {pathname: '/addreview', state: {place: place}};
         return(
             <div class="places-container">
                 <div>
