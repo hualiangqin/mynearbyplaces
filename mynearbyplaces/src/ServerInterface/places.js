@@ -1,8 +1,10 @@
 let places =
 [
     {
+        id: 1,
         name: "place1",
-        address: "1234 N water road",
+        city: "tucson",
+        state: "AZ",
         type : "restaurant",
         reviews:[
             {
@@ -16,8 +18,10 @@ let places =
         ]
     },
     {
+        id: 2,
         name: "place 3",
-        address: "3840 E happy ave",
+        city: "tucson",
+        state: "AZ",
         type: "shopping mall",
         reviews:[
             {
@@ -31,8 +35,10 @@ let places =
         ]
     },
     {
+        id: 3,
         name: "place 8",
-        address: "0778 W DonXi highway",
+        city: "tempe",
+        state: "AZ",
         type: "dry cleaning",
         reviews: [
             {
@@ -42,8 +48,10 @@ let places =
         ]
     },
     {
+        id: 4,
         name: "place 28",
-        address: "012394 unknown place",
+        city: "phoenix",
+        state: "AZ",
         type: "barber",
         reviews: [
             {
@@ -53,8 +61,10 @@ let places =
         ]
     },
     {
+        id: 5,
         name: "place 167",
-        address: "wherever",
+        city: "apache junction",
+        state: "AZ",
         type: "grocery",
         reviews :[
             {

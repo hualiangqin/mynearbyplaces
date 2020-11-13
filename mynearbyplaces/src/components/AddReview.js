@@ -1,5 +1,6 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
+import server from '../ServerInterface/server';
 
 class AddReview extends React.Component{
     constructor(props){
@@ -7,8 +8,21 @@ class AddReview extends React.Component{
         this.state = {
             stars: "",
             comment: "",
+            id: 0,
             submitted: false,
         };
+    }
+
+    componentDidMount = () =>{
+        const location = this.props.location;
+        let id = 0;
+        if (location){
+            if(location.state){
+                id = location.state.id ? location.state.id : '';
+                console.log(id);
+                this.setState({id: id});
+            }
+        }
     }
 
     handleChange = (event) =>{
@@ -19,15 +33,22 @@ class AddReview extends React.Component{
 
     submitReview = (event) =>{
         this.setState({submitted: true});
+        const id = this.state.id;
 
         //more to go on
         const {stars, comment} = this.state;
         console.log("stars: " + stars);
         console.log("comment: " + comment);
+        let review = {
+            stars: stars,
+            comment: comment
+        }
+        server.addReview(id, review);
         event.preventDefault();
     }
 
     render(){
+
         if (this.state.submitted){
             return(
                 <Redirect to='/mynearbyplaces'/>

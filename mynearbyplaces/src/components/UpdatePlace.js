@@ -2,17 +2,37 @@ import React from 'react';
 import {Redirect} from 'react-router-dom';
 import server from '../ServerInterface/server';
 
-class AddPlace extends React.Component{
-
+class UpdatePlace extends React.Component{
     constructor(props){
         super(props);
         this.state = {
+            id: 0,
             name: "",
             type: "",
             state: "",
             city: "",
+            reviews: [],
             submitted: false,
         };
+    }
+
+    componentDidMount = () =>{
+        const location = this.props.location;
+        if (location){
+            if(location.state){
+                if (location.state.place){
+                    let place = location.state.place;
+                    this.setState({
+                        id: place.id,
+                        name: place.name,
+                        type: place.type,
+                        state: place.state,
+                        city: place.city,
+                        reviews: place.reviews
+                    })
+                }
+            }
+        }
     }
 
     handleChange = (event) =>{
@@ -24,12 +44,15 @@ class AddPlace extends React.Component{
     submitPlace = (event) =>{
         this.setState({submitted: true});
 
-        const {name, type, city, state} = this.state;
-        console.log("name: " + name);
-        console.log("type: " + type);
-        console.log("city: " + city);
-        console.log("state:" + state);
-        server.addPlace(name, city, state, type);
+        const {id, name, type, city, state, reviews} = this.state;
+        let place = {
+            name: name,
+            type: type,
+            city: city,
+            state: state,
+            reviews: reviews
+        }
+        server.updatePlace(id, place);
         //more to go on
         event.preventDefault();
     }
@@ -55,10 +78,10 @@ class AddPlace extends React.Component{
                 <label>State: </label>
                 <input type="text" name="state" value={this.state.state} onChange={this.handleChange}></input>
                 <br />
-                <button type="submit">submit</button>
+                <button type="submit">update</button>
             </form>
         );
     }
 }
 
-export default AddPlace;
+export default UpdatePlace;

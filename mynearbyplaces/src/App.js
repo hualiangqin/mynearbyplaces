@@ -7,6 +7,7 @@ import {
 import Home from './components/Home';
 import AddReview from './components/AddReview';
 import AddPlace from './components/AddPlace';
+import UpdatePlace from './components/UpdatePlace';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path='/mynearbyplaces' component={Home}/>
         <Route path='/addreview' component={AddReview}/>
         <Route path='/addplace' component={AddPlace}/>
+        <Route path='/updateplace' component={UpdatePlace}/>
       </Switch>
     </BrowserRouter>
   );

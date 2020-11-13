@@ -4,13 +4,14 @@ import './Place.css';
 import {
     Link
   } from "react-router-dom";
+import server from '../ServerInterface/server';
 
 class Place extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             showReview: false,
-            reviews: []
+            id: 0
         };
     }
 
@@ -24,19 +25,29 @@ class Place extends React.Component{
         }else{
             this.setState({showReview: true});
         }
-        
+    }
+
+    deletePlace = (id) => {
+        server.removePlace(id);
     }
 
     render(){
-        console.log("in place");
         const { place } = this.props;
+        let id = place.id;
+        let dest = {pathname: "/addreview", state: {id: id}}
+        let update = {
+            pathname: "/updateplace",
+            state: {
+                place: place
+            }
+        }
         return(
             <div className="places-container">
-                <p>Hello world</p>
                 <div>
                     <div>Name: {place.name}</div>
-                    <div>Address: {place.address}</div>
                     <div>Type: {place.type}</div>
+                    <div>City: {place.city}</div>
+                    <div>State: {place.state}</div>
                 </div>
                 {this.state.showReview ?
                 <p onClick={this.showOrCollapseReviews}>reviews: <i className="down"></i></p>
@@ -49,9 +60,15 @@ class Place extends React.Component{
                 place.reviews.map(r => <Review review={r}/>)
                 : ''}
                 </div>
-                <Link to='/addreview'>
-                    <button>Add Review</button>
-                </Link>
+                <div className="modify-container">
+                    <Link to={dest}>
+                        <button>Add Review</button>
+                    </Link>
+                    <button onClick={() => this.deletePlace(id)}>Delete</button>
+                    <Link to={update}>
+                        <button>Update</button>
+                    </Link>
+                </div>
             </div>
         );
     }

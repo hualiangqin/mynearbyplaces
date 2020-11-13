@@ -43,10 +43,11 @@ class Home extends React.Component{
             for (let j=0; j<places.length; j++){
                 let place = places[j];
                 let name = place.name;
-                let address = place.address;
+                let city = place.city;
+                let state = place.state;
                 let type = place.type;
 
-                if (name.includes(kW) || address.includes(kW) || type.includes(kW)){
+                if (name.includes(kW) || city.includes(kW) || state.includes(kW) || type.includes(kW)){
                     if (placeResults.some(item => _.isEqual(item, place)) === false){
                         placeResults.push(place);
                     }
@@ -57,12 +58,17 @@ class Home extends React.Component{
         this.setState({results: placeResults})
     }
 
+    showAllPlace = () =>{
+        let places = this.state.places;
+        this.setState({results: places});
+    }
+
     body = () => {
         const {results} = this.state;
         return (
             <div className="results-container">
                 {results.length>0 ? 
-                results.map(p => <Place key={p.name} place={p}/>)
+                results.map(p => <Place key={p.id} place={p}/>)
                 :
                 "no results"}
             </div>
@@ -84,6 +90,7 @@ class Home extends React.Component{
                         <Link to='/addplace'>
                             <button>Add Place</button>
                         </Link>
+                        <button onClick={this.showAllPlace}>All Place</button>
                     </div>
                 </div>
                 {this.body()}
