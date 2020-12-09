@@ -1,16 +1,15 @@
-.input{
-    display: inline-block;
-    background: transparent;
-    position: relative;
-    width: 50%;
-    box-sizing: border-box;
-    border-color: white;
+.inputboxes{
+    display: flex;
+    flex-direction: row;
 }
 
 .input-wrapper{
     background-color: white;
-    width: 50%;
-    display: inline;
+    width: 37.5%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex-grow: 4
 }
 
 .main{

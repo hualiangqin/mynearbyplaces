@@ -39,11 +39,17 @@ class AddReview extends React.Component{
         const {stars, comment} = this.state;
         console.log("stars: " + stars);
         console.log("comment: " + comment);
-        let review = {
-            stars: stars,
-            comment: comment
-        }
-        server.addReview(id, review);
+        fetch('https://hualiangqin-nearbyplaces-api.herokuapp.com/review/' + id, 
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    stars: stars,
+                    review_comment: comment
+                })
+            }).then(x => console.log(x)).catch(e => console.log(e));
         event.preventDefault();
     }
 

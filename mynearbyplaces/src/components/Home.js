@@ -3,8 +3,6 @@ import {
     Link
   } from "react-router-dom";
 import './Home.css';
-import server from '../ServerInterface/server';
-// import places from '../ServerInterface/places';
 import Place from './Place';
 
 class Home extends React.Component{
@@ -13,15 +11,18 @@ class Home extends React.Component{
         this.state = {
             places: [],
             keywords: "",
+            city: "",
             results: []
         };
     }
 
     componentDidMount() {
         if (this.state.places.length === 0){
-            const places = server.fetchPlaces();
-            this.setState({places: places})
-            console.log(places);
+            let api = 'https://hualiangqin-nearbyplaces-api.herokuapp.com/places';
+            fetch(api).then(x => x.json()).then(places => {
+                this.setState({places: places});
+                console.log(places);
+            }).catch(e => console.log(e));
         }
     }
 
@@ -34,28 +35,14 @@ class Home extends React.Component{
     clickSearch = () => {
         console.log("click");
         console.log(this.state.keywords);
-        const _ = require('lodash'); 
-        const {keywords, places} = this.state;
-        let keywordsArray = keywords.split(" ");
-        let placeResults = [];
-        for (let i=0; i<keywords.length; i++){
-            let kW = keywordsArray[i];
-            for (let j=0; j<places.length; j++){
-                let place = places[j];
-                let name = place.name;
-                let city = place.city;
-                let state = place.state;
-                let type = place.type;
-
-                if (name.includes(kW) || city.includes(kW) || state.includes(kW) || type.includes(kW)){
-                    if (placeResults.some(item => _.isEqual(item, place)) === false){
-                        placeResults.push(place);
-                    }
-                }
-            }
-        }
-        console.log(placeResults);
-        this.setState({results: placeResults})
+        console.log(this.state.city);
+        const {keywords, city} = this.state;
+        
+        let api = 'https://hualiangqin-nearbyplaces-api.herokuapp.com/search/' + keywords + '/' +  city;
+        fetch(api).then(x => x.json()).then(places => {
+            this.setState({results: places});
+            console.log(places);
+        }).catch(e => console.log(e));
     }
 
     showAllPlace = () =>{
@@ -84,13 +71,17 @@ class Home extends React.Component{
                     <div className="search-field">
                         <div className="input-wrapper">
                             <span>Find</span>
-                            <input className="input" maxLength="64" placeholder="find my nearby places" name="keywords" value={this.state.keywords} onChange={this.handleChange}></input>
+                            <div className="inputboxes">
+                                <input className="input" maxLength="64" placeholder="keyword" name="keywords" value={this.state.keywords} onChange={this.handleChange}></input>
+                                <input className="input" maxLength="64" placeholder="city" name="city" value={this.state.city} onChange={this.handleChange}></input>
+                            </div>
                             <button onClick={this.clickSearch}>Search</button>
+                       
+                            <Link to='/addplace'>
+                                <button>Add Place</button>
+                            </Link>
+                            <button onClick={this.showAllPlace}>All Place</button>
                         </div>
-                        <Link to='/addplace'>
-                            <button>Add Place</button>
-                        </Link>
-                        <button onClick={this.showAllPlace}>All Place</button>
                     </div>
                 </div>
                 {this.body()}

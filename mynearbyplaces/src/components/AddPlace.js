@@ -29,8 +29,19 @@ class AddPlace extends React.Component{
         console.log("type: " + type);
         console.log("city: " + city);
         console.log("state:" + state);
-        server.addPlace(name, city, state, type);
-        //more to go on
+        fetch('https://hualiangqin-nearbyplaces-api.herokuapp.com/place', 
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    place_name : name,
+                    city: city,
+                    state: state,
+                    place_type: type
+                })
+            }).then(x => console.log(x)).catch(e => console.log(e));
         event.preventDefault();
     }
 

@@ -11,8 +11,19 @@ class Place extends React.Component{
         super(props);
         this.state = {
             showReview: false,
-            id: 0
+            id: 0,
+            reviews: []
         };
+    }
+
+    componentDidMount() {
+        const { place } = this.props;
+        let id = place.id;
+        let api = 'https://hualiangqin-nearbyplaces-api.herokuapp.com/reviews/' + id;
+        fetch(api).then(x => x.json()).then(reviews => {
+            this.setState({reviews: reviews});
+            console.log(reviews);
+        }).catch(e => console.log(e));
     }
 
     fillReviews = (r) => {
@@ -32,20 +43,21 @@ class Place extends React.Component{
     }
 
     render(){
+        const {reviews} = this.state;
         const { place } = this.props;
         let id = place.id;
         let dest = {pathname: "/addreview", state: {id: id}}
-        let update = {
-            pathname: "/updateplace",
-            state: {
-                place: place
-            }
-        }
+        // let update = {
+        //     pathname: "/updateplace",
+        //     state: {
+        //         place: place
+        //     }
+        // }
         return(
             <div className="places-container">
                 <div>
-                    <div>Name: {place.name}</div>
-                    <div>Type: {place.type}</div>
+                    <div>Name: {place.place_name}</div>
+                    <div>Type: {place.place_type}</div>
                     <div>City: {place.city}</div>
                     <div>State: {place.state}</div>
                 </div>
@@ -57,17 +69,17 @@ class Place extends React.Component{
                 <br />
                 <div>
                 {this.state.showReview ? 
-                place.reviews.map(r => <Review review={r}/>)
+                reviews.map(r => <Review review={r}/>)
                 : ''}
                 </div>
                 <div className="modify-container">
                     <Link to={dest}>
                         <button>Add Review</button>
                     </Link>
-                    <button onClick={() => this.deletePlace(id)}>Delete</button>
+                    {/* <button onClick={() => this.deletePlace(id)}>Delete</button>
                     <Link to={update}>
                         <button>Update</button>
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
         );

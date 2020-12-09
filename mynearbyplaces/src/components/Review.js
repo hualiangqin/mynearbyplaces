@@ -8,7 +8,7 @@ class Review extends React.Component{
             <div>
                 <div>
                     <div>Stars: {review.stars}</div>
-                    <div>Comment: {review.comment}</div>
+                    <div>Comment: {review.review_comment}</div>
                     <br/>
                 </div>
             </div>
