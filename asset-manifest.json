@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/mynearbyplaces/static/css/main.f62742e8.chunk.css",
-    "main.js": "/mynearbyplaces/static/js/main.32bfc5cd.chunk.js",
-    "main.js.map": "/mynearbyplaces/static/js/main.32bfc5cd.chunk.js.map",
-    "runtime-main.js": "/mynearbyplaces/static/js/runtime-main.ed4e8ec5.js",
-    "runtime-main.js.map": "/mynearbyplaces/static/js/runtime-main.ed4e8ec5.js.map",
-    "static/js/2.f21a0b79.chunk.js": "/mynearbyplaces/static/js/2.f21a0b79.chunk.js",
-    "static/js/2.f21a0b79.chunk.js.map": "/mynearbyplaces/static/js/2.f21a0b79.chunk.js.map",
-    "static/js/3.5e11fd44.chunk.js": "/mynearbyplaces/static/js/3.5e11fd44.chunk.js",
-    "static/js/3.5e11fd44.chunk.js.map": "/mynearbyplaces/static/js/3.5e11fd44.chunk.js.map",
+    "main.css": "/mynearbyplaces/static/css/main.db67c3dc.chunk.css",
+    "main.js": "/mynearbyplaces/static/js/main.f76d0e19.chunk.js",
+    "main.js.map": "/mynearbyplaces/static/js/main.f76d0e19.chunk.js.map",
+    "runtime-main.js": "/mynearbyplaces/static/js/runtime-main.8e942ab7.js",
+    "runtime-main.js.map": "/mynearbyplaces/static/js/runtime-main.8e942ab7.js.map",
+    "static/js/2.a4c1949c.chunk.js": "/mynearbyplaces/static/js/2.a4c1949c.chunk.js",
+    "static/js/2.a4c1949c.chunk.js.map": "/mynearbyplaces/static/js/2.a4c1949c.chunk.js.map",
+    "static/js/3.234fe27e.chunk.js": "/mynearbyplaces/static/js/3.234fe27e.chunk.js",
+    "static/js/3.234fe27e.chunk.js.map": "/mynearbyplaces/static/js/3.234fe27e.chunk.js.map",
     "index.html": "/mynearbyplaces/index.html",
-    "static/css/main.f62742e8.chunk.css.map": "/mynearbyplaces/static/css/main.f62742e8.chunk.css.map",
-    "static/js/2.f21a0b79.chunk.js.LICENSE.txt": "/mynearbyplaces/static/js/2.f21a0b79.chunk.js.LICENSE.txt",
+    "static/css/main.db67c3dc.chunk.css.map": "/mynearbyplaces/static/css/main.db67c3dc.chunk.css.map",
+    "static/js/2.a4c1949c.chunk.js.LICENSE.txt": "/mynearbyplaces/static/js/2.a4c1949c.chunk.js.LICENSE.txt",
     "static/media/Home.css": "/mynearbyplaces/static/media/tucson.95aa00c7.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.ed4e8ec5.js",
-    "static/js/2.f21a0b79.chunk.js",
-    "static/css/main.f62742e8.chunk.css",
-    "static/js/main.32bfc5cd.chunk.js"
+    "static/js/runtime-main.8e942ab7.js",
+    "static/js/2.a4c1949c.chunk.js",
+    "static/css/main.db67c3dc.chunk.css",
+    "static/js/main.f76d0e19.chunk.js"
   ]
 }
